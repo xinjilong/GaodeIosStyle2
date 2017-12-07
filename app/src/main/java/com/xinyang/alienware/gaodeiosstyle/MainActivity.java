@@ -30,7 +30,9 @@ import java.util.ArrayList;
 
 /***
  *  主界面：1NoScrollViewPager 进行不同Style页面的区分 因为地图有手势滑动操作这里做了禁止滑动Viewpager处理
- *  2 Android 6.0 之后需要 动态获取定位等权限
+ *  2 Android 6.0 之后需要 动态获取定位等权限否则无法定位，获取权限要在定位加载之前操作
+ *  3 将清单文件中的key 换成自己的申请的key
+ *  4 so文件不要忘记移植 main目录下 jniLibs
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -58,11 +60,7 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE} ;
     private PermissionsChecker checker ; //权限检测器
-    //高德地图定位
-    private LocationSource.OnLocationChangedListener mListener;
-    private AMapLocationClient mlocationClient;
-    private AMapLocationClientOption mLocationOption;
-    private AMap aMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

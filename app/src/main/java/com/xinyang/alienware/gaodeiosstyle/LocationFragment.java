@@ -61,12 +61,10 @@ import java.util.List;
  */
 
 public class LocationFragment extends Fragment implements LocationSource, AMapLocationListener, PoiSearch.OnPoiSearchListener{
-    private TextView textView,mHint;
+    private TextView mHint;
     private MapView mapView ;
-    private AMap aMap;
     private View bottomSheet;
     private BottomSheetBehavior<View> behavior;
-    private ImageView mFocusSearch;
     private EditText searchead;
     private List<PoiItem> pois;
     private RecyclerView recyclerView;
@@ -77,6 +75,7 @@ public class LocationFragment extends Fragment implements LocationSource, AMapLo
     private AMapLocationClientOption mLocationOption;
     private LatLng point;
     private Marker marker ;
+    private AMap aMap;
     //poi搜索
     private String keyWord = "";// 要输入的poi搜索关键字
     private PoiResult poiResult; // poi返回的结果
@@ -112,8 +111,6 @@ public class LocationFragment extends Fragment implements LocationSource, AMapLo
         //底部抽屉栏展示地址
         bottomSheet = parentView.findViewById(R.id.bottom_sheet);
         behavior = BottomSheetBehavior.from(bottomSheet);
-
-        mFocusSearch = parentView.findViewById(R.id.img_focus_search); //搜索框内的放大镜图标当Edittext获取焦点时隐藏
         searchead = parentView.findViewById(R.id.edit_search_maphead);
         searchead.addTextChangedListener(new TextWatcher() {
             @Override
