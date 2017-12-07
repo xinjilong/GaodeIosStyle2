@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:imeOptions="actionSearch"
+            android:id="@+id/edit_defalt"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="35dp"
+            android:hint="搜索地点或地址"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:background="@drawable/shape_main_edit"/>
+        <ImageView
+            android:id="@+id/img_focus_search"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fx_icon_search_normal"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+       android:visibility="gone"
+        android:id="@+id/poirecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.amap.api.maps.MapView
+            android:id="@+id/map_defalt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+            <ImageView
+                android:id="@+id/mark"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/poi_marker_pressed"/>
+            <!--为了更好与定位之后的红点适配此imagview只是适配用没有意义-->
+            <ImageView
+                android:layout_below="@+id/mark"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                />
+        </RelativeLayout>
+
+    </FrameLayout>
+    <!--<com.amap.api.maps.MapView-->
+        <!--android:id="@+id/map_defalt"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--/>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/defalt_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

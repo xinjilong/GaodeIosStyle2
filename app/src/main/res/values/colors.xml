@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="divider_color">#f3f3f3</color>
+    <color name="tab_Indicator_color">#48a2f8</color>
+    <color name="bbb_color">#bbbbbb</color>
+    <color name="black_666_color">#666666</color>
+    <color name="color_gray">#f0f0f4</color>
+</resources>
